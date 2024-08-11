@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>Mohamed khaled</title>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="dropdown-container">
+
+      <div class="type-board">
+        <label for="boardSize" class="dropLabel">Select board:</label>
+        <select id="boardSize" class="boardDropdown dropdown">
+          <option value="3">3 x 3</option>
+          <option value="4">4 x 4</option>
+          <option value="5">5 x 5</option>
+        </select>
+      </div>
+  
+
+      <div class="difficulty-container">
+        <label for="difficulty" class="dropLabel">Select Difficulty:</label>
+        <select id="difficulty" class="dropdown dropdownDifficulty">
+          <option value="easy">Easy</option>
+          <option value="medium" selected>Medium</option>
+          <option value="hard">Hard</option>
+          <option value="impossible">Impossible</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="board">
+    </div>
+
+
+
+    <button id="reset" class="reset"">Reset</button>
+
+  </div>
+  <script src=" script.js"></script>
+
+      <!-- <script src="chatGPT.js"></script> -->
+      <!-- <script src="minmax.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+:root {
+  --color-blue: #233d4a;
+  --color-light-blue: #a8bec9;
+  --color-dark-blue: #192a32;
+  --color-darker-blue: #112129;
+  --color-orange: #f2b237;
+  --color-aqua: #31c4be;
+  --border-radius: 1rem;
+  --grid-rows: 3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  font-size: 1.6rem;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /*background-color: var(--color-dark-blue);*/
+  background-size: cover;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+}
+
+.container:before {
+  content: '';
+  position: absolute;
+  width: 130%;
+  height: 130%;
+  opacity: 0.8;
+  background: url(./pattern.jpg);
+  background-size: cover;
+  filter: blur(35px);
+  z-index: -1;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-rows), 100px);
+  grid-template-rows: repeat(var(--grid-rows), 100px);
+  margin: 0 auto;
+  gap: 1.5rem;
+}
+
+.cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 3em;
+  color: var(--color-aqua);
+  background-color: var(--color-blue);
+  border-radius: var(--border-radius);
+  isolation: isolate;
+  font-family: 'Rubik Mono One', sans-serif;
+}
+
+.cell--X {
+  color: var(--color-aqua);
+}
+
+.cell--O {
+  color: var(--color-orange);
+}
+
+.value {
+  z-index: 1;
+  user-select: none;
+}
+
+.cell:before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: -0.4rem;
+  border-radius: calc(var(--border-radius) / 2);
+  background-color: var(--color-darker-blue);
+}
+
+.cell:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: calc(var(--border-radius) / 2);
+  background-color: var(--color-blue);
+  transition: all 0.3s;
+}
+
+
+.dropdown-container {
+  display: flex;
+  gap: 5rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+.type-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* margin: 20px; */
+}
+
+.non-interactive {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+
+.boardDropdown {
+  background-color: #0d61bb;
+}
+
+/* إضافة بعض التأثيرات لجعل القائمة المنسدلة أكثر جاذبية */
+.boardDropdown:hover {
+  background-color: #024fa1;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.dropLabel {
+  display: block;
+  color: white;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.dropdownDifficulty {
+  background-color: #3498db;
+
+}
+
+.dropdownDifficulty:hover {
+  background-color: #2980b9;
+}
+
+
+
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.popup {
+  /* Hide the popup by default */
+
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup.show {
+  display: flex; /* Show the popup when the class 'show' is added */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#reset {
+  display: block;
+  margin: 20px auto;
+  cursor: pointer;
+  background: none;
+  outline: none;
+  border: 1px solid var(--color-aqua);
+  border-radius: calc(var(--border-radius) / 4);
+  padding: 0.4rem 0.8rem;
+  color: var(--color-aqua);
+}
